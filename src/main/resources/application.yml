@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/hint}
+    username: ${DB_USER:hint}
+    password: ${DB_PASSWORD:hint}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+llm:
+  api-key: ${AI_API_KEY}
+  base-url: ${LLM_BASE_URL:https://api.anthropic.com}
+  model: ${LLM_MODEL:claude-sonnet-4-6}
+  max-tokens: 256
+  temperature: 0.2
+  timeout-seconds: 5
+
+hint:
+  limit-per-game: 10
+  llm-enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
